@@ -83,7 +83,7 @@ Same machine as the container
 http://localhost:27495/v1 (the default)
 
 Another computer on your network
-http://<server-ip-or-name>:27495/v1
+http://server-ip-or-name:27495/v1
 
 Another container on the same Docker network
 http://brightkb:27495/v1
