@@ -68,8 +68,8 @@ With this, both the web UI and the API listen on all interfaces. After starting,
 `docker logs brightkb` should show `0.0.0.0` in the `LISTENING` block.
 
 
-## 
-Use with AI agents
+## Use with AI agents
+
 The skills in OsintObserver/BrightKB-AI
 (Claude Code, OpenAI Codex, Hermes Agent, Pi and OpenClaw) let an agent query
 BrightKB through its OpenAI-compatible API.
