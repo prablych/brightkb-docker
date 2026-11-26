@@ -1,6 +1,6 @@
 # brightkb-docker
 
-Run [BrightKB](https://brightkb.com/) in Docker: a small image, a `compose.yaml`
+Run BrightKB (https://brightkb.com/) in Docker: a small image, a 'compose.yaml'
 and a helper script. Tested on a Synology NAS (x86-64), and it works on any
 Linux host with Docker.
 
@@ -66,6 +66,33 @@ api_host: 0.0.0.0
 
 With this, both the web UI and the API listen on all interfaces. After starting,
 `docker logs brightkb` should show `0.0.0.0` in the `LISTENING` block.
+
+
+## 
+Use with AI agents
+The skills in OsintObserver/BrightKB-AI
+(Claude Code, OpenAI Codex, Hermes Agent, Pi and OpenClaw) let an agent query
+BrightKB through its OpenAI-compatible API.
+It reads the BRIGHTKB_URL environment variable. By default it calls http://127.0.0.1:27495/v1, which only works when the agent runs on the same
+machine as the container.
+Where the agent runs
+BRIGHTKB_URL
+Same machine as the container
+http://localhost:27495/v1 (the default)
+Another computer on your network
+http://<server-ip-or-name>:27495/v1
+Another container on the same Docker network
+http://brightkb:27495/v1
+
+Set it in the environment of the agent, for example:
+export BRIGHTKB_URL=http://192.168.1.50:27495/v1      # Linux / macOS (add it to ~/.bashrc to keep it)
+setx BRIGHTKB_URL "http://192.168.1.50:27495/v1"      # Windows (open a new terminal afterwards)
+Check that the agent's machine can reach the server:
+curl "$BRIGHTKB_URL/models"
+Then install the skill for your agent by following the instructions in that repository.
+If an agent ignores the helper script and calls the API directly, tell it the URL
+above, since the skill text mentions 127.0.0.1.
+
 
 ## Updates from the web UI
 
