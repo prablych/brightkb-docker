@@ -1,0 +1,7 @@
+# Settings
+
+## Settings saved from the program
+
+api_enabled: true
+api_port: 27495
+api_host: 0.0.0.0

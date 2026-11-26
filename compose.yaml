@@ -1,0 +1,12 @@
+services:
+  brightkb:
+    build: .
+    image: brightkb
+    container_name: brightkb
+    restart: unless-stopped
+    command: ["--no-update-check"]
+    ports:
+      - "8080:8080"      # web UI
+      - "27495:27495"    # OpenAI-compatible API
+    volumes:
+      - ./app:/opt/brightkb   # binary, config.md and modules (.ikm) live here
