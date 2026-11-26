@@ -89,6 +89,7 @@ Another container on the same Docker network
 http://brightkb:27495/v1
 
 Set it in the environment of the agent, for example:
+
 export BRIGHTKB_URL=http://192.168.1.50:27495/v1      # Linux / macOS (add it to ~/.bashrc to keep it)
 
 setx BRIGHTKB_URL "http://192.168.1.50:27495/v1"      # Windows (open a new terminal afterwards)
