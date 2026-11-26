@@ -75,12 +75,16 @@ The skills in OsintObserver/BrightKB-AI
 BrightKB through its OpenAI-compatible API.
 It reads the BRIGHTKB_URL environment variable. By default it calls http://127.0.0.1:27495/v1, which only works when the agent runs on the same
 machine as the container.
+
 Where the agent runs
-BRIGHTKB_URL
+BRIGHTKB_URL:
+
 Same machine as the container
 http://localhost:27495/v1 (the default)
+
 Another computer on your network
 http://<server-ip-or-name>:27495/v1
+
 Another container on the same Docker network
 http://brightkb:27495/v1
 
